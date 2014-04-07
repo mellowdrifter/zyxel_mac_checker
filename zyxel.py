@@ -1,3 +1,8 @@
+'''
+Log into a list of ZyXEL P660 devices and extract
+their MAC address and hostnames
+'''
+
 import cookielib
 import urllib
 import urllib2
@@ -5,13 +10,13 @@ import re
 
 devices=[]
 try:
-    with open('devices.dsl') as file:
+    with open('devices.txt') as file:
         pass
 except IOError as e:
     print"\ndevices.txt does not exist or unreadable, exiting now"
     exit()
 
-f = open('devices.dsl')
+f = open('devices.txt')
 for line in f:
     devices.append(line.rstrip())
 
